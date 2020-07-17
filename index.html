@@ -8,7 +8,9 @@
     <script src="vue.js"></script>
   </head>
   <body>
-    <div id="app"><p>{{ sayHello() }}</p></div>
+    <div id="app">
+      <p>{{ sayHello() }} - <a v-bind:href="link"> Google</a></p>
+    </div>
   </body>
   <!-- START VUE SCRIPT -->
   <script>
@@ -16,10 +18,11 @@
       el: "#app",
       data: {
         title: "Hello World!",
+        link: "http://www.aol.com",
       },
       methods: {
         sayHello: function () {
-          return "Hello Override";
+          return this.title;
         },
       },
     });
